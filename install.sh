@@ -6,11 +6,18 @@
 purp=`tput setaf 5`
 reset=`tput sgr0`
 clear >$(tty)
+
+kopf() {
 echo
 echo
 echo "${purp}Proxy Script by TRAP${reset}"
 echo
 echo
+}
+
+kopf
+kopf
+kopf
 ##################################
 echo "1. Enter Telegram API Key :"
 read telapikey
