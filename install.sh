@@ -46,8 +46,8 @@ case $key in
     y|Y)
         echo "You pressed 'y'. Continuing..."
 
-echo "$telapikey" > telapikey.txt
-echo "$telchatid" > telchatid.txt
+echo "$telapikey" > /scripts/telapikey.txt
+echo "$telchatid" > /scripts/telchatid.txt
 
         ;;
     n|N)
