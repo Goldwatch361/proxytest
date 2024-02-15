@@ -6,37 +6,33 @@
 purp=`tput setaf 5`
 reset=`tput sgr0`
 clear >$(tty)
-
+##################################
 kopf() {
+clear >$(tty)
 echo
 echo
 echo "${purp}Proxy Script by TRAP${reset}"
 echo
 echo
 }
-
-kopf
-kopf
-kopf
 ##################################
+
 echo "1. Enter Telegram API Key :"
 read telapikey
-clear >$(tty)
-echo
-echo
-echo "${purp}Proxy Script by TRAP${reset}"
-echo
-echo
+
+kopf
+
 ##################################
+
 echo "2. Enter Telegram Chat ID :"
 read telchatid
-clear >$(tty)
-echo
-echo
-echo "${purp}Proxy Script by TRAP${reset}"
-echo
-echo
+
+kopf
+
 ##################################
+
+echo "3. 
+
 echo "Your Telegram API Key is : ${purp}$telapikey ${reset}"
 echo "Your Telegram Chat ID is : ${purp}$telchatid ${reset}"
 echo
