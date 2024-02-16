@@ -54,19 +54,30 @@ read -s -n 1 key
 # Check which key was pressed
 case $key in
     y|Y)
+
+head
+    
         echo "You pressed 'y'. Continuing..."
 
 echo "$telapikey" > telapikey.txt
 echo "$telchatid" > telchatid.txt
+echo "$authip" > authip.txt
 mv telapikey.txt scripts
 mv telchatid.txt scripts
+mv authip.txt scripts
 
         ;;
     n|N)
-        echo "You pressed 'n'. Exiting..."
+
+head
+    
+        echo "Settings saved!"
         exit 1
         ;;
     *)
+
+head
+    
         echo "Invalid input. Please press 'y' or 'n'."
         ;;
 esac
