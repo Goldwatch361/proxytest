@@ -48,6 +48,8 @@ echo "Is that correct ?"
 echo "press(Y/N) to continue."
 echo
 
+##################################
+
 # Wait for the user to press a key
 read -s -n 1 key
 
@@ -55,9 +57,8 @@ read -s -n 1 key
 case $key in
     y|Y)
 
-head
-    
-        echo "You pressed 'y'. Continuing..."
+kopf   
+echo "You pressed 'y'. Continuing..."
 
 echo "$telapikey" > telapikey.txt
 echo "$telchatid" > telchatid.txt
@@ -69,15 +70,13 @@ mv authip.txt scripts
         ;;
     n|N)
 
-head
-    
-        echo "Settings saved!"
+kopf
+echo "Settings saved!"
         exit 1
         ;;
     *)
 
-head
-    
-        echo "Invalid input. Please press 'y' or 'n'."
+kopf
+echo "Invalid input. Please press 'y' or 'n'."
         ;;
 esac
