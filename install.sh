@@ -6,7 +6,7 @@
 purp=`tput setaf 5`
 reset=`tput sgr0`
 clear >$(tty)
-##################################
+######################################################################################################
 kopf() {
 clear >$(tty)
 echo
@@ -15,28 +15,28 @@ echo "${purp}Proxy Script by TRAP${reset}"
 echo
 echo
 }
-##################################
+######################################################################################################
 
 kopf
 
 echo "1. Enter Telegram API Key :"
 read telapikey
 
-##################################
+######################################################################################################
 
 kopf
 
 echo "2. Enter Telegram Chat ID :"
 read telchatid
 
-##################################
+######################################################################################################
 
 kopf
 
 echo "3. Enter Authenticate IP : (IP where u want to use the Proxy)"
 read authip
 
-##################################
+######################################################################################################
 
 kopf
 
@@ -48,7 +48,7 @@ echo "Is that correct ?"
 echo "press(Y/N) to continue."
 echo
 
-##################################
+######################################################################################################
 
 # Wait for the user to press a key
 read -s -n 1 key
@@ -80,3 +80,31 @@ kopf
 echo "Invalid input. Please press 'y' or 'n'."
         ;;
 esac
+
+######################################################################################################
+
+head
+
+function loading_icon() {
+    local load_interval="${1}"
+    local loading_message="${2}"
+    local elapsed=0
+    local loading_animation=( '—' "\\" '|' '/' )
+
+    echo -n "${loading_message} "
+
+    # This part is to make the cursor not blink
+    # on top of the animation while it lasts
+    tput civis
+    trap "tput cnorm" EXIT
+    while [ "${load_interval}" -ne "${elapsed}" ]; do
+        for frame in "${loading_animation[@]}" ; do
+            printf "%s\b" "${frame}"
+            sleep 0.1
+        done
+        elapsed=$(( elapsed + 1 ))
+    done
+    printf " \b\n"
+}
+
+loading_icon 60 "I'm loading!"
