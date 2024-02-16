@@ -79,17 +79,16 @@ while true; do
 read -rsn1 input
 
 if [ "$input" = "y" ]; then
-    echo "yes"
     saveset
-    loading 99999 "Setup Proxy..."
+    kopf
+    loading 60 "Setup Proxy..."
 
 elif [ "$input" = "n" ]; then
-    echo "no"
     main
 
 elif [ "$input" = "e" ]; then
-    echo "exit"
-exit
+    exit
+    
 fi
 
 done
