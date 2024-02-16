@@ -81,7 +81,7 @@ read -rsn1 input
 if [ "$input" = "y" ]; then
     echo "yes"
     saveset
-    loading "Setup Proxy..."
+    loading 99999 "Setup Proxy..."
 
 elif [ "$input" = "n" ]; then
     echo "no"
