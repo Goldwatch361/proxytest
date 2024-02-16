@@ -17,6 +17,8 @@ echo
 }
 ######################################################################################################
 
+main() {
+
 kopf
 
 echo "1. Enter Telegram API Key :"
@@ -44,21 +46,12 @@ echo "Your Telegram API Key is : ${purp}$telapikey ${reset}"
 echo "Your Telegram Chat ID is : ${purp}$telchatid ${reset}"
 echo "Your Trusted IP is :       ${purp}$authip ${reset}"
 echo
-echo "Is that correct ?"
-echo "press(Y/N) to continue."
-echo
+
+}
 
 ######################################################################################################
 
-# Wait for the user to press a key
-read -s -n 1 key
-
-# Check which key was pressed
-case $key in
-    y|Y)
-
-kopf   
-echo "You pressed 'y'. Continuing..."
+saveset(){
 
 echo "$telapikey" > telapikey.txt
 echo "$telchatid" > telchatid.txt
@@ -67,27 +60,43 @@ mv telapikey.txt scripts
 mv telchatid.txt scripts
 mv authip.txt scripts
 
-esac
+}
 
-        ;;
-    n|N)
+ask(){
+echo
+echo "Information correct?"
+echo
+echo "y = yes"
+echo "n = no"
+echo "e = exit"
 
-kopf
-echo "Settings saved!"
-        exit 1
-        ;;
-    *)
+while true; do
+read -rsn1 input
 
-kopf
-echo "Invalid input. Please press 'y' or 'n'."
-        ;;
-esac
+if [ "$input" = "y" ]; then
+    echo "yes"
+    saveset
+    loading 60 "I'm loading!"
+
+elif [ "$input" = "n" ]; then
+    echo "no"
+    main
+
+elif [ "$input" = "e" ]; then
+    echo "exit"
+exit
+fi
+
+done
+}
+
+ask
 
 ######################################################################################################
 
 head
 
-function loading_icon() {
+loading() {
     local load_interval="${1}"
     local loading_message="${2}"
     local elapsed=0
@@ -109,4 +118,3 @@ function loading_icon() {
     printf " \b\n"
 }
 
-loading_icon 60 "I'm loading!"
