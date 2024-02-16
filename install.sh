@@ -17,25 +17,32 @@ echo
 }
 ##################################
 
+kopf
+
 echo "1. Enter Telegram API Key :"
 read telapikey
 
-kopf
-
 ##################################
+
+kopf
 
 echo "2. Enter Telegram Chat ID :"
 read telchatid
 
+##################################
+
 kopf
+
+echo "3. Enter Authenticate IP : (IP where u want to use the Proxy)
+read authip
 
 ##################################
 
-echo "3. 
+kopf
 
 echo "Your Telegram API Key is : ${purp}$telapikey ${reset}"
 echo "Your Telegram Chat ID is : ${purp}$telchatid ${reset}"
-echo
+echo "Your Trusted IP is :       ${purp}$authip ${reset}"
 echo
 echo "Is that correct ?"
 echo "press(Y/N) to continue."
