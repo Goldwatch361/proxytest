@@ -67,6 +67,8 @@ mv telapikey.txt scripts
 mv telchatid.txt scripts
 mv authip.txt scripts
 
+esac
+
         ;;
     n|N)
 
