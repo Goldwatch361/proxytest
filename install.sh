@@ -33,7 +33,7 @@ read telchatid
 
 kopf
 
-echo "3. Enter Authenticate IP : (IP where u want to use the Proxy)
+echo "3. Enter Authenticate IP : (IP where u want to use the Proxy)"
 read authip
 
 ##################################
