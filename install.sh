@@ -4,6 +4,7 @@
 ##################################
 #colors
 purp=`tput setaf 5`
+red=`tput setaf 1`
 reset=`tput sgr0`
 clear >$(tty)
 
@@ -27,16 +28,25 @@ main() {
 kopf
 
 echo "1. Enter Telegram API Key :"
+echo
 read telapikey
 
 kopf
 
 echo "2. Enter Telegram Chat ID :"
+echo
 read telchatid
 
 kopf
 
-echo "3. Enter Authenticate IP : (IP where u want to use the Proxy)"
+echo "IP Address for incoming Source."
+echo "Enter 0.0.0.0/0 to get Proxy Access from everywhere."
+echo
+echo "${red}! Not recommend to set 0.0.0.0/0 !${reset}"
+echo "${red}! ProxyScraper get this Proxy soon or later !${reset}"
+echo
+echo "3. Enter Authenticate IP :"
+echo
 read authip
 
 kopf
