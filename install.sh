@@ -117,6 +117,11 @@ loading() {
         elapsed=$(( elapsed + 1 ))
     done
     printf " \b\n"
+
+    echo 
+    echo "Setup Complete!"
+    echo
+    exit
 }
 
 ######################################################################################################
