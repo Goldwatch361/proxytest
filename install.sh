@@ -46,6 +46,8 @@ echo "Your Telegram Chat ID is : ${purp}$telchatid ${reset}"
 echo "Your Trusted IP is :       ${purp}$authip ${reset}"
 echo
 
+ask
+
 }
 
 ######################################################################################################
@@ -128,4 +130,3 @@ loading() {
 
 kopf
 main
-ask
